@@ -80,7 +80,6 @@ The front end was originally created using [Create React App](https://create-rea
 
           manage.py runserver
 
-
     > **Note:** If the current working directory isn't included in your OS's PATH environment variable, you'll need to prepend it to the command like so:
 
     Windows:
@@ -144,8 +143,9 @@ The front end was originally created using [Create React App](https://create-rea
         rootdir: ./quantic-test-course/backend/hangry_api
         collected 5 items
 
-        tests/test_DeliveryCost.py ...                     [ 60%]
-        tests/test_SubtotalCost.py ..                      [100%]
+        tests/test_DeliveryCost.py ...                     [ 50%]
+        tests/test_SubtotalCost.py ..                      [ 83%]
+        tests/test_Tax.py ...........                      [100%]
         ================= 5 passed in 0.16s =====================
 
 4.  [Optional] Generate a coverage report:
@@ -159,7 +159,7 @@ The front end was originally created using [Create React App](https://create-rea
         hangry_api/api/__init__.py                                   0      0   100%
         hangry_api/api/admin.py                                      5      5     0%
         hangry_api/api/apps.py                                       4      4     0%
-        hangry_api/api/controllers.py                               16      0   100%
+        hangry_api/api/controllers.py                               23      2    91%
         hangry_api/api/migrations/0001_initial.py                    5      5     0%
         hangry_api/api/migrations/0002_food_category_alter_food_p... 5      5     0%
         hangry_api/api/migrations/__init__.py                        0      0   100%
@@ -167,7 +167,7 @@ The front end was originally created using [Create React App](https://create-rea
         hangry_api/api/serializers.py                               23     23     0%
         hangry_api/api/tests.py                                      1      1     0%
         hangry_api/api/urls.py                                       3      3     0%
-        hangry_api/api/views.py                                     71     71     0%
+        hangry_api/api/views.py                                     84     84     0%
         hangry_api/hangry_api/__init__.py                            0      0   100%
         hangry_api/hangry_api/asgi.py                                4      4     0%
         hangry_api/hangry_api/settings.py                           19     19     0%
@@ -177,8 +177,9 @@ The front end was originally created using [Create React App](https://create-rea
         hangry_api/tests/__init__.py                                 0      0   100%
         hangry_api/tests/test_DeliveryCost.py                       22      0   100%
         hangry_api/tests/test_SubtotalCost.py                       15      0   100%
+        hangry_api/tests/test_Tax.py                                 7      0   100%
         ----------------------------------------------------------------------------
-        TOTAL                                                      229    176    23%
+        TOTAL                                                      254    191    25%
 
 ## Running the Front End
 
