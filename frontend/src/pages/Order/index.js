@@ -9,6 +9,8 @@ export default function Order() {
   const [deliveryDistance, setDeliveryDistance] = useState(0);
   const [deliveryFee, setDeliveryFee] = useState(0);
   const [subtotal, setSubtotal] = useState(0);
+  const [tax, setTax] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const renderItem = (orderItem, idx) => {
     return (
@@ -71,7 +73,21 @@ export default function Order() {
         setSubtotal(response.data.data);
       }
     });
-  }, [deliveryDistance, orderName, subtotal]);
+    axios
+      .get(`${API_URL}/api/tax/${orderName}/${deliveryDistance}`)
+      .then((response) => {
+        if (response.data.status === 'success') {
+          setTax(response.data.data);
+        }
+      });
+    axios
+      .get(`${API_URL}/api/total/${orderName}/${deliveryDistance}`)
+      .then((response) => {
+        if (response.data.status === 'success') {
+          setTotal(response.data.data);
+        }
+      });
+  }, [deliveryDistance, orderName, subtotal, tax, total]);
   return (
     <div className={style.wrapper}>
       {orderItems.length > 0 && renderDelivery()}
@@ -79,9 +95,8 @@ export default function Order() {
       {orderItems.map((orderItem, idx) => renderItem(orderItem, idx))}
       {renderFee('Subtotal', subtotal)}
       {renderFee('Delivery Fee', deliveryFee)}
-      <div className={style.bottomLine}>
-        {renderFee('Total', deliveryFee + subtotal)}
-      </div>
+      {renderFee('Tax', tax)}
+      <div className={style.bottomLine}>{renderFee('Total', total)}</div>
     </div>
   );
 }
