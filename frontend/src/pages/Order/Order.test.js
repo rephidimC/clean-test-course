@@ -43,6 +43,20 @@ describe('Test Order', () => {
               data: 5,
             },
           });
+        case `${API_URL}/api/tax/test-fun/5`:
+          return Promise.resolve({
+            data: {
+              status: 'success',
+              data: 0.86,
+            },
+          });
+        case `${API_URL}/api/total/test-fun/5`:
+          return Promise.resolve({
+            data: {
+              status: 'success',
+              data: 10.86,
+            },
+          });
         default:
           return Promise.resolve({
             data: {
@@ -95,7 +109,9 @@ describe('Test Order', () => {
       //The delivery fee and the subtotal should be $5.00.  So there should be 2.
       expect(screen.getAllByText('$5.00')).toHaveLength(2);
     });
+    //Check the tax
+    expect(screen.getAllByText('$0.86')).toHaveLength(1);
     //Check the total.
-    expect(screen.getAllByText('$10.00')).toHaveLength(1);
+    expect(screen.getAllByText('$10.86')).toHaveLength(1);
   });
 });
