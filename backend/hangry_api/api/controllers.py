@@ -22,7 +22,9 @@ class Tax():
     tax = (subTotal + deliveryFee) * 0.0825
     return (0,round(tax,2)) [ round(tax,2) > 0 ]
 
-#Stubbed Total
+#Completed Total
 class Total():
   def calculate(order, deliveryFee):
-    return 16.24
+    subTotal = Subtotal.calculate(order)
+    total = (subTotal + deliveryFee) * 1.0825
+    return (0,round(total,2)) [ round(total,2) > 0 ]
