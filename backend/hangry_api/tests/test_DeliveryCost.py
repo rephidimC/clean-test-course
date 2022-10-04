@@ -13,15 +13,6 @@ def test_LotsOfItems():
   #Assert
   assert cost == 7.5
 
-def test_LittleItems():
-  #Arrange
-  # TODO: Arrange the items to run the test
-  #Act
-  # TODO: Call the function that will be tested
-  #Assert
-  # TODO: replace the return true with an assert to test the value returned.
-  return True
-
 def test_MiddleOfTheRoadItems():
   #Arrange
   order = MockSet()
@@ -33,3 +24,12 @@ def test_MiddleOfTheRoadItems():
   cost = Delivery.calculate(order,delivery_distance)
   #Assert
   assert cost == 5
+
+def test_LittleItems():
+  #Arrange
+  # TODO: Arrange the items to run the test
+  #Act
+  # TODO: Call the function that will be tested
+  #Assert
+  # TODO: replace the return true with an assert to test the value returned.
+  return True
