@@ -18,36 +18,15 @@ describe('Test Order', () => {
       { item: 'Test 2', quantity: 2 },
       { item: 'Test 3', quantity: 3 },
     ];
-    //Mock API calls
-    const mockGet = jest.spyOn(axios, 'get');
-    mockGet.mockImplementation((url) => {
-      switch (url) {
-        case `${API_URL}/api/delivery/test-fun/0`:
-          return Promise.resolve({
-            data: {
-              status: 'success',
-              data: 2.5,
-            },
-          });
-        case `${API_URL}/api/delivery/test-fun/5`:
-          return Promise.resolve({
-            data: {
-              status: 'success',
-              data: 5.0,
-            },
-          });
-        default:
-          return Promise.resolve({
-            data: {
-              status: 'fail',
-            },
-          });
-      }
-    });
+  });
+  afterEach(() => {
+    jest.restoreAllMocks();
   });
 
-  it('Test Delivery Fee', async () => {
+  test('Test Delivery Fee', async () => {
     //ACT
+    // Setup the Mock API.
+    setupMock();
     //Call the page
     render(
       <OrderContext.Provider value={{ orderName, orderItems }}>
@@ -62,8 +41,10 @@ describe('Test Order', () => {
     });
   });
 
-  it('Test Update Delivery Fee', async () => {
+  test('Test Update Delivery Fee', async () => {
     //ACT
+    // Setup the Mock API.
+    setupMock();
     //Call the page
     render(
       <OrderContext.Provider value={{ orderName, orderItems }}>
@@ -89,3 +70,32 @@ describe('Test Order', () => {
     });
   });
 });
+
+const setupMock = () => {
+  //Mock API calls
+  const mockGet = jest.spyOn(axios, 'get');
+  mockGet.mockImplementation((url) => {
+    switch (url) {
+      case `${API_URL}/api/delivery/test-fun/0`:
+        return Promise.resolve({
+          data: {
+            status: 'success',
+            data: 2.5,
+          },
+        });
+      case `${API_URL}/api/delivery/test-fun/5`:
+        return Promise.resolve({
+          data: {
+            status: 'success',
+            data: 5.0,
+          },
+        });
+      default:
+        return Promise.resolve({
+          data: {
+            status: 'fail',
+          },
+        });
+    }
+  });
+};
