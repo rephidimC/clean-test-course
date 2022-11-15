@@ -10,7 +10,7 @@ describe('Hits Home Page', () => {
       "Welcome to Hangry Hippo! Hungry? Let's get started!"
     );
   });
-  it('Shows the Menu items', () => {
+  it('shows the Menu items', () => {
     //Check for the Appeteasers menu item
     cy.get('[data-testid=category-item]')
       .should('be.visible')
