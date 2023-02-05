@@ -32,4 +32,4 @@ def test_LittleItems():
   # TODO: Call the function that will be tested
   #Assert
   # TODO: replace the return true with an assert to test the value returned.
-  return True
+  pass
