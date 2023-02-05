@@ -1,6 +1,6 @@
 describe('Hits Home Page', () => {
   it('passes', () => {
-    cy.visit('http://hangry-web-dev.us-east-1.elasticbeanstalk.com/');
+    cy.visit('http://hangryweb-env.eba-vdyerazm.us-east-1.elasticbeanstalk.com/');
   });
   it('displays the Welcome message', () => {
     // We use the `cy.get()` command to get all elements that match the selector.
@@ -25,7 +25,7 @@ describe('Hits Home Page', () => {
 
 describe('Hits Order Page', () => {
   it('passes', () => {
-    cy.visit('http://hangry-web-dev.us-east-1.elasticbeanstalk.com/order');
+    cy.visit('http://hangryweb-env.eba-vdyerazm.us-east-1.elasticbeanstalk.com/order');
   });
   it('shows Your Order title', () => {
     // We use the `cy.get()` command to get all elements that match the selector.
