@@ -31,5 +31,5 @@ def test_LittleItems():
   #Act
   # TODO: Call the function that will be tested
   #Assert
-  # TODO: replace the return true with an assert to test the value returned.
-  return True
+  # TODO: replace the pass with an assert to test the value returned.
+  pass
