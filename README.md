@@ -201,7 +201,7 @@ The front end was originally created using [Create React App](https://create-rea
 
 5.  [Optional] To use the local back-end APIs, make sure both servers (front-end and back-end) are running. Then, update ./frontend/src/utils/constants.js by replacing this line:
 
-        export const API_URL = 'http://hangry-api-dev.us-east-1.elasticbeanstalk.com';
+        export const API_URL = 'https://hangryhippo-api.quantic.host';
 
     with this line:
 
