@@ -1,6 +1,6 @@
 describe('Shows Appeteasers', () => {
   it('Connect to Dev Server', () => {
-    cy.visit('http://hangry-web-dev.us-east-1.elasticbeanstalk.com/');
+    cy.visit('https://hangryhippo.quantic.host/');
   });
   it('selects Handhelds', () => {
     //Navigate to Handhelds.  This makes sure that the link actually exists.
