@@ -25,7 +25,7 @@ describe('Hits Home Page', () => {
 
 describe('Hits Order Page', () => {
   it('passes', () => {
-    cy.visit('https://hangryhippo.quantic.host/');
+    cy.visit('https://hangryhippo.quantic.host/order');
   });
   it('shows Your Order title', () => {
     // We use the `cy.get()` command to get all elements that match the selector.
