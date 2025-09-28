@@ -59,7 +59,7 @@ describe("Test Order", () => {
       // Find the select element, like a real user would.
       screen.getByRole("combobox"),
       // Find and select the 5 mile option, like a real user would.
-      screen.getByRole("option", { name: "5 miles" })
+      screen.getByRole("option", { name: "5 miles" }) //
     );
     //Assert: replace the return true.
     await waitFor(() => {
